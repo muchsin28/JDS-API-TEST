@@ -1,6 +1,4 @@
 const router = require('express').Router()
-//TODO: Remove This
-const { version } = require('../package.json')
 const { list, register, login, getById, validateToken } = require('./controller')
 
 router.get('/users/:id/validate-token', (req, res, next)=> validateToken(req,res,next))
