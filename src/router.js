@@ -1,5 +1,5 @@
 const router = require('express').Router()
-//TODO: Remove This
+//TODO: Remove This line
 const { version } = require('../package.json')
 const { list, register, login, getById, validateToken } = require('./controller')
 
