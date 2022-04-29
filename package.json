@@ -1,0 +1,38 @@
+{
+  "name": "jds-api-test",
+  "version": "1.0.0",
+  "description": "Simple API for Register, Login, Token Validation - made for Jabar Digital Service - screening test purposes only",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js --experimental-json-module",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muchsin28/JDS-API-TEST.git"
+  },
+  "keywords": [
+    "api",
+    "node.js",
+    "express",
+    "jest"
+  ],
+  "author": " Syihab Muchsin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muchsin28/JDS-API-TEST/issues"
+  },
+  "homepage": "https://github.com/muchsin28/JDS-API-TEST#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "http-status-codes": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "jest": "^28.0.2",
+    "nodemon": "^2.0.15"
+  }
+}
