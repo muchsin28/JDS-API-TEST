@@ -1,4 +1,5 @@
 const router = require('express').Router()
+//TODO: Remove This
 const { version } = require('../package.json')
 const { list, register, login, getById, validateToken } = require('./controller')
 
@@ -8,6 +9,6 @@ router.get('/users', (req, res, next)=> list(req,res,next))
 router.post('/register', (req, res, next)=>register(req,res,next))
 router.post('/login', (req, res, next)=>login(req,res,next))
 
-router.get('/', (req,res)=> res.send(`JDS-API TEST v${version}`))
+router.get('/', (req,res)=> res.send(`JDS-API TEST v${process.env.APP_VERSION}`))
 
 module.exports = router

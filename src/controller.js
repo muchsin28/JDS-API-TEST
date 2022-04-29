@@ -88,7 +88,7 @@ class Controller{
       }
         
       const id = user.id
-      user.token = jwt.sign({ id, username }, 'secret', { expiresIn: '1h' })
+      user.token = jwt.sign({ id, username }, process.env.SECRET, { expiresIn: process.env.TOKEN_EXPIRE_IN_HOUR+'h' })
 
       await updateData(user)
 
@@ -138,7 +138,7 @@ class Controller{
         throw createHttpError(StatusCodes.NOT_FOUND, 'Token Not Found')
       }
 
-      const validate = jwt.verify(data?.token, 'secret', (err, decoded) => {
+      const validate = jwt.verify(data?.token, process.env.SECRET, (err, decoded) => {
         if(err){
           return err
         }
