@@ -42,7 +42,7 @@ async function saveData(data){
     const list = JSON.parse(await listData())
     const newList = [...list, data]
 
-    return await fs.writeFile('data.json', JSON.stringify(newList,null,2), (err)=>{
+    return await fs.writeFile(`${process.env.FILE_NAME||'data'}.json`, JSON.stringify(newList,null,2), (err)=>{
       if(err) throw err
     })
   } catch (error) {
@@ -58,7 +58,7 @@ async function updateData(newData){
     const updateList = list
     updateList[dataIndex] = newData
 
-    return await fs.writeFile('data.json', JSON.stringify(updateList,null,2), (err)=>{
+    return await fs.writeFile(`${process.env.FILE_NAME||'data'}.json`, JSON.stringify(updateList,null,2), (err)=>{
       if(err) throw err
     })
  
@@ -81,7 +81,7 @@ async function getDataById(id){
 }
 async function listData(){
   try {
-    return await fs.readFile('data.json', 'utf8')
+    return await fs.readFile(`${process.env.FILE_NAME||'data'}.json`, 'utf8')
   } catch(error) {
     return console.log(error);
   }
